@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <div class="main">
+      <div class="form-div">
+        <form action="/signin" method="post" class="form">
+          <label for="username">Username</label>
+          <input type="text" name="username" required />
+          <label for="password">Password</label>
+          <input type="password" name="password" required />
+          <button type="submit">Get user information</button>
+        </form>
+        <% if(locals.user){ %>
+        <div class="info_div">
+          <p>Name: <%= user.firstName + " " + user.lastName%></p>
+          <p>Gender: <%= user.gender %></p>
+          <p>Address: <%= user.address %></p>
+          <p>Age: <%= user.age %> years</p>
+          <p>Date of Donation: <%= user.today%></p>
+        </div>
+        <form action="/donate" method="post" class="form">
+          <label for="group">Blood Group</label>
+          <select name="group" required disabled>
+            <option value="<%= user.userBloodGroup %>">
+              <%= user.userBloodGroup %>
+            </option>
+          </select>
+          <label for="type">Type of blood bag</label>
+          <select name="type" required>
+            <option value="">Select</option>
+            <option value="Single Blood bag(350ml)">
+              Single Blood bag(350ml)
+            </option>
+            <option value="Single Blood bag(450ml)">
+              Single Blood bag(450ml)
+            </option>
+            <option value="Double Blood bag(RBC + Plasma)">
+              Double Blood bag(RBC + Plasma)
+            </option>
+            <option value="Triple Blood bag(RBC + Plasma + Platelets)">
+              Triple Blood bag(RBC + Plasma + Platelets)
+            </option>
+          </select>
+          <label for="weight">Weight</label>
+          <input type="number" name="weight" required placeholder="kgs" />
+          <label for="height">Height</label>
+          <input type="number" name="height" required placeholder="cms" />
+          <input type="hidden" name="id" value="<%=user._id%>" />
+          <input type="hidden" name="bgroup" value="<%=user.userBloodGroup%>" />
+          <button type="submit">Add Donation Entry</button>
+        </form>
+        <% }%> <% if(!locals.user){ %>
+        <a href="/signup">Not registered? Sign up</a>
+        <% }%>
+        <p class="message"><%= message %></p>
+      </div>
+    </div>
+  </body>
+</html>

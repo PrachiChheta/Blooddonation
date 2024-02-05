@@ -1,0 +1,19 @@
+h3 {
+  color: black;
+}
+
+tr,
+th,
+td {
+  border: black 1px solid;
+  padding: 1rem;
+}
+
+tr,
+th {
+  font-size: 2rem;
+}
+
+a {
+  margin-top: 0;
+}

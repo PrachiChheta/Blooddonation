@@ -1,0 +1,46 @@
+h1,
+h3 {
+  color: black;
+  margin-bottom: 5rem;
+}
+
+.info {
+  padding: 6rem 7.5% 3rem;
+}
+
+p {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 2.4rem;
+}
+
+.field {
+  min-width: 15rem;
+}
+
+.donations_div {
+  margin-top: 5rem;
+  padding: 0 7.5%;
+}
+
+h4 {
+  font-family: "Lato", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.table {
+  display: grid;
+  width: 70%;
+  grid-template-columns: 20% 20% 20% 35%;
+}
+
+.table p {
+  font-size: 2rem;
+  border-bottom: 0.5px solid gray;
+  margin-bottom: 1rem;
+}

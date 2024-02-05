@@ -1,0 +1,43 @@
+.hero {
+  height: calc(100vh - var(--navbar-size));
+  background-image: url("/hero.png");
+  background-size: cover;
+  position: relative;
+}
+
+.title-div {
+  position: absolute;
+  top: 15vh;
+  left: 10rem;
+  margin-right: 3rem;
+  max-width: 85rem;
+}
+
+.description {
+  color: white;
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+}
+
+.button-div {
+  margin: 3rem 0;
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    background-size: cover;
+    background-position: 10% 0%;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    background-position: 50% 0%;
+  }
+
+  .title-div {
+    top: 20vh;
+    left: 2rem;
+  }
+}

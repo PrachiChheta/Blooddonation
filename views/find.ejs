@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <link rel="stylesheet" href="/css/find.css" />
+    <title>Find Blood</title>
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <form action="/find" method="post">
+      <label>Enter required blood group</label>
+      <select name="group" required>
+        <option value="">Select</option>
+        <option value="A+">A+</option>
+        <option value="O+">O+</option>
+        <option value="B+">B+</option>
+        <option value="AB+">AB+</option>
+        <option value="A-">A-</option>
+        <option value="O-">O-</option>
+        <option value="B-">B-</option>
+        <option value="AB-">AB-</option>
+      </select>
+      <button type="submit">Find</button>
+    </form>
+    <h3><%= message %></h3>
+    <% if (donors.length !== 0) { %>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Blood Group</th>
+      </tr>
+      <% donors.forEach(function(donor) { %>
+      <tr>
+        <td><%= donor._id%></td>
+        <td>
+          <a href="/donations/<%=donor._id %>">
+            <%= donor.firstName + " " + donor.lastName%>
+          </a>
+        </td>
+        <td><%= donor.userBloodGroup%></td>
+      </tr>
+      <% }); %>
+    </table>
+    <% } %>
+  </body>
+</html>

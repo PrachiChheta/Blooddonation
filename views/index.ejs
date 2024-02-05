@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <title>Blood Donation</title>
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <div class="hero">
+      <div class="title-div">
+        <h1>Blood Donation</h1>
+        <h3>Donate blood, Save lives</h3>
+        <div class="button-div">
+          <form action="/signup" class="button-form">
+            <button>Sign Up</button>
+          </form>
+          <form action="/signin" class="button-form">
+            <button>Save a Life</button>
+          </form>
+          <form action="/find" class="button-form">
+            <button>Find Blood</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

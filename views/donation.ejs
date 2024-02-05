@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Details</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/donation.css" />
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <div class="info">
+      <h3>User Donation History</h3>
+      <p class="field">Name:</p>
+      <p><%= results.firstName + " " +results.lastName %></p>
+      <br />
+      <p class="field">Gender:</p>
+      <p><%= results.gender %></p>
+      <br />
+      <p class="field">Age:</p>
+      <p><%= results.age %> years old</p>
+      <br />
+      <p class="field">Blood Group:</p>
+      <p><%= results.userBloodGroup %></p>
+      <br />
+    </div>
+    <div class="donations_div">
+      <h4>Blood inventory</h4>
+      <div class="table">
+        <p class="title">Weight(Kg)</p>
+        <p class="title">Height(Cm)</p>
+        <p class="title">Date</p>
+        <p class="title">Bag Type</p>
+        <% results.donations.forEach(function(don) { %>
+        <p><%= don.donorWeight%></p>
+        <p><%= don.donorHeight%></p>
+        <p><%- getDate(don.timeOfDonation)%></p>
+        <p><%= don.donationType%></p>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
